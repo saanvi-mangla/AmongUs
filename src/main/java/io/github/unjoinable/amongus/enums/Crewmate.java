@@ -3,7 +3,6 @@ package io.github.unjoinable.amongus.enums;
 import java.util.Arrays;
 import java.util.Collection;
 
-@SuppressWarnings("unused")
 public enum Crewmate {
     RED,
     ORANGE,

@@ -1,5 +1,6 @@
 package io.github.unjoinable.amongus;
 
+import io.github.unjoinable.amongus.commands.ResourceTest;
 import io.github.unjoinable.amongus.commands.TestCommand;
 import io.github.unjoinable.amongus.data.Constants;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -10,10 +11,10 @@ import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
 import net.minestom.server.extras.MojangAuth;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;
-import net.minestom.server.registry.DynamicRegistry;
-import net.minestom.server.world.DimensionType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static io.github.unjoinable.amongus.data.Constants.DIMENSION;
 
 public class AmongUs {
     private static final MiniMessage miniMessage = MiniMessage.miniMessage();
@@ -21,7 +22,6 @@ public class AmongUs {
     private static InstanceContainer hubInstance;
     private static InstanceManager instanceManager;
     private static GameInstanceStorage instanceStorage;
-    private static GlobalEventHandler eventHandler;
 
     public static void main(String[] args) {
         //Initialization
@@ -31,18 +31,18 @@ public class AmongUs {
         instanceManager = MinecraftServer.getInstanceManager();
         instanceStorage = new GameInstanceStorage();
 
-        DynamicRegistry.Key<DimensionType> dimension = MinecraftServer.getDimensionTypeRegistry().register("hub", Constants.FULL_BRIGHT_DIM);
-        hubInstance = instanceManager.createInstanceContainer(dimension);
+        hubInstance = instanceManager.createInstanceContainer(DIMENSION);
         logger.info("Starting server on port {}. Powered by Minestom, Engineered by unjoinable", Constants.PORT);
 
-        eventHandler = MinecraftServer.getGlobalEventHandler();
+        GlobalEventHandler eventHandler = MinecraftServer.getGlobalEventHandler();
 
         eventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(hubInstance);
         });
 
         CommandManager commandManager = MinecraftServer.getCommandManager();
-        commandManager.register(new TestCommand());
+        commandManager.register(new TestCommand()); // FOR TESTING PURPOSES ONLY
+        commandManager.register(new ResourceTest());
 
         server.start("0.0.0.0", Constants.PORT);
     }

@@ -2,12 +2,9 @@ package io.github.unjoinable.amongus;
 
 import io.github.unjoinable.amongus.data.Constants;
 import io.github.unjoinable.amongus.enums.Crewmate;
-import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.anvil.AnvilLoader;
-import net.minestom.server.registry.DynamicRegistry;
-import net.minestom.server.world.DimensionType;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -26,8 +23,7 @@ public class GameInstance {
      */
     public GameInstance(UUID uuid) {
         this.instanceUUID = uuid;
-        DynamicRegistry.Key<DimensionType> dimension = MinecraftServer.getDimensionTypeRegistry().register(uuid.toString(), Constants.FULL_BRIGHT_DIM);
-        mcInstance = AmongUs.getInstanceManager().createInstanceContainer(dimension);
+        mcInstance = AmongUs.getInstanceManager().createInstanceContainer(Constants.DIMENSION);
         mcInstance.setChunkLoader(new AnvilLoader(Constants.WORLD_PATH));
         AmongUs.getLogger().info("Creating a new instance for {}", instanceUUID);
     }
@@ -40,7 +36,7 @@ public class GameInstance {
                 throw new RuntimeException(e);
             }
             AmongUs.getLogger().info("Added {} to game instance {}", fromComponent(player.getName()), instanceUUID);
-            player.sendMessage(MM."<green> Added to game instance \{instanceUUID}");
+            player.sendMessage(MM."<green>Added to game instance \{instanceUUID}");
 
         });
     }
