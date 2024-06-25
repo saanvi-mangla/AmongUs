@@ -7,31 +7,31 @@ import java.util.Collection;
 Currently Planned Tasks
  */
 public enum Task {
-    FIX_WIRING(TaskType.SHORT),
-    SWIPE_CARD(TaskType.SHORT),
-    CLEAN_O2_FILTER(TaskType.SHORT),
-    CLEAR_ASTEROIDS(TaskType.LONG),
-    DIVERT_POWER(TaskType.VERY_LONG),
-    DOWNLOAD_AND_UPLOAD(TaskType.VERY_LONG),
-    EMPTY_GARBAGE(TaskType.SHORT),
-    FUEL_ENGINE(TaskType.SHORT),
-    INSPECT_SAMPLE(TaskType.LONG),
-    START_REACTOR(TaskType.VERY_LONG),
-    SCAN(TaskType.LONG),
+    FIX_WIRING(TaskLength.SHORT),
+    SWIPE_CARD(TaskLength.SHORT),
+    CLEAN_O2_FILTER(TaskLength.SHORT),
+    CLEAR_ASTEROIDS(TaskLength.LONG),
+    DIVERT_POWER(TaskLength.VERY_LONG),
+    DOWNLOAD_AND_UPLOAD(TaskLength.VERY_LONG),
+    EMPTY_GARBAGE(TaskLength.SHORT),
+    FUEL_ENGINE(TaskLength.SHORT),
+    INSPECT_SAMPLE(TaskLength.LONG),
+    START_REACTOR(TaskLength.VERY_LONG),
+    SCAN(TaskLength.LONG),
     ;
 
-    private final TaskType taskType;
+    private final TaskLength taskLength;
     private static final Collection<Task> VALUES = Arrays.asList(values());
 
-    Task(TaskType taskType) {
-        this.taskType = taskType;
+    Task(TaskLength taskLength) {
+        this.taskLength = taskLength;
     }
 
     /**
      * @return Returns the severity of tasks used to calculate the amount of task points given
      */
-    public TaskType getTaskType() {
-        return taskType;
+    public TaskLength getTaskType() {
+        return taskLength;
     }
 
     /**

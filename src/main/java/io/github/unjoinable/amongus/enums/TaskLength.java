@@ -1,6 +1,6 @@
 package io.github.unjoinable.amongus.enums;
 
-public enum TaskType {
+public enum TaskLength {
     VERY_LONG,
     LONG,
     SHORT,
