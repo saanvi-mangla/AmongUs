@@ -9,6 +9,7 @@ Currently Planned Tasks
  */
 public enum Task {
     FIX_WIRING(TaskLength.SHORT),
+    UNLOCK_MANIFOLDS(TaskLength.SHORT),
     SWIPE_CARD(TaskLength.SHORT),
     CLEAN_O2_FILTER(TaskLength.SHORT),
     CLEAR_ASTEROIDS(TaskLength.LONG),
