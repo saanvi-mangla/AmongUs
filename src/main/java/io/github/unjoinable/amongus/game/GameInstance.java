@@ -3,6 +3,7 @@ package io.github.unjoinable.amongus.game;
 import io.github.unjoinable.amongus.AmongUs;
 import io.github.unjoinable.amongus.data.Constants;
 import io.github.unjoinable.amongus.enums.Crewmate;
+import io.github.unjoinable.amongus.util.PlayerHeader;
 import net.minestom.server.entity.Player;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.anvil.AnvilLoader;
@@ -33,6 +34,7 @@ public class GameInstance {
         instancePlayers.forEach((player, _) -> {
             try {
                 player.setInstance(mcInstance, Constants.SKELD_SPAWN_POS);
+                PlayerHeader.setSussyHeader(player, instancePlayers.get(player));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
