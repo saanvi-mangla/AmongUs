@@ -16,7 +16,7 @@ public class PlayerHeader {
      * @param crewmate The type of crewmate player is / will be
      */
     public static void setSussyHeader(Player player, Crewmate crewmate) {
-        PlayerHeader.setPlayerHeader(player, crewmate.name(), MM."<color:\{crewmate.getColor()}><bold>\{crewmate.name().replaceAll("_", " ")}");
+        PlayerHeader.setPlayerHeader(player, crewmate.name(), MM."<bold>\{crewmate.name().replaceAll("_", " ")}".color(crewmate.getColor()));
     }
 
     /**
