@@ -25,5 +25,6 @@ dependencies {
     implementation("net.minestom:minestom-snapshots:0f81bc31ff")
     implementation("net.kyori:adventure-text-minimessage:4.17.0")
     implementation("ch.qos.logback:logback-classic:1.4.12")
+    implementation("org.reflections:reflections:0.10.2")
 
 }

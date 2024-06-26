@@ -43,9 +43,11 @@ public class GameInstance {
      * @param player The player we are adding to game instance
      * @param crewmate The kind of crewmate we are adding to game instance
      */
-    public void addPlayer(@NotNull Player player, @NotNull Crewmate crewmate) {
+    public void addPlayer(Player player, Crewmate crewmate) {
         if (player != null && crewmate != null) {
             instancePlayers.put(player, crewmate);
+        } else {
+            throw new IllegalArgumentException("null");
         }
     }
 

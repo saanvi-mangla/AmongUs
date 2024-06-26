@@ -1,7 +1,6 @@
 package io.github.unjoinable.amongus.task;
 
 import io.github.unjoinable.amongus.enums.GameMap;
-import io.github.unjoinable.amongus.enums.Task;
 import io.github.unjoinable.amongus.enums.TaskLength;
 import net.minestom.server.event.inventory.InventoryPreClickEvent;
 import org.jetbrains.annotations.NotNull;
