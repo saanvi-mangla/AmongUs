@@ -3,6 +3,7 @@ package io.github.unjoinable.amongus;
 import io.github.unjoinable.amongus.commands.ResourceTest;
 import io.github.unjoinable.amongus.commands.TestCommand;
 import io.github.unjoinable.amongus.data.Constants;
+import io.github.unjoinable.amongus.game.GameInstanceStorage;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandManager;

@@ -1,5 +1,6 @@
-package io.github.unjoinable.amongus;
+package io.github.unjoinable.amongus.game;
 
+import io.github.unjoinable.amongus.AmongUs;
 import io.github.unjoinable.amongus.data.Constants;
 import io.github.unjoinable.amongus.enums.Crewmate;
 import net.minestom.server.entity.Player;
@@ -37,7 +38,6 @@ public class GameInstance {
             }
             AmongUs.getLogger().info("Added {} to game instance {}", fromComponent(player.getName()), instanceUUID);
             player.sendMessage(MM."<green>Added to game instance \{instanceUUID}");
-
         });
     }
 

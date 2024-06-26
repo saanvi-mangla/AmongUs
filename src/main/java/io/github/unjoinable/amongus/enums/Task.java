@@ -2,6 +2,7 @@ package io.github.unjoinable.amongus.enums;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 
 /*
 Currently Planned Tasks
@@ -21,7 +22,7 @@ public enum Task {
     ;
 
     private final TaskLength taskLength;
-    private static final Collection<Task> VALUES = Arrays.asList(values());
+    private static final Collection<Task> VALUES = Collections.unmodifiableCollection(Arrays.asList(values()));
 
     Task(TaskLength taskLength) {
         this.taskLength = taskLength;
@@ -35,7 +36,7 @@ public enum Task {
     }
 
     /**
-     * @return Get all Tasks as a collection
+     * @return Get all Tasks as an unmodifiable collection
      */
     public static Collection<Task> getValues() {
         return VALUES;

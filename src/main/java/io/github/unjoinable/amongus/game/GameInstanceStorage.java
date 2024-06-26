@@ -1,4 +1,4 @@
-package io.github.unjoinable.amongus;
+package io.github.unjoinable.amongus.game;
 
 import org.jetbrains.annotations.NotNull;
 
