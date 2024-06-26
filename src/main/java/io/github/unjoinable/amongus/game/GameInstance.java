@@ -32,12 +32,8 @@ public class GameInstance {
 
     public void start() {
         instancePlayers.forEach((player, _) -> {
-            try {
-                player.setInstance(mcInstance, Constants.SKELD_SPAWN_POS);
-                PlayerHeader.setSussyHeader(player, instancePlayers.get(player));
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
+            player.setInstance(mcInstance, Constants.SKELD_SPAWN_POS);
+            PlayerHeader.setSussyHeader(player, instancePlayers.get(player));
             AmongUs.getLogger().info("Added {} to game instance {}", fromComponent(player.getName()), instanceUUID);
             player.sendMessage(MM."<green>Added to game instance \{instanceUUID}");
         });
@@ -48,14 +44,16 @@ public class GameInstance {
      * @param crewmate The kind of crewmate we are adding to game instance
      */
     public void addPlayer(@NotNull Player player, @NotNull Crewmate crewmate) {
-        instancePlayers.put(player, crewmate);
+        if (player != null && crewmate != null) {
+            instancePlayers.put(player, crewmate);
+        }
     }
 
     /**
      * @param crewmate The type of crewmate to check
      * @return If the provided crewmate is already in the game instance
      */
-    public @NotNull Boolean contains(@NotNull Crewmate crewmate) {
+    public boolean contains(@NotNull Crewmate crewmate) {
         return instancePlayers.containsValue(crewmate);
     }
 
