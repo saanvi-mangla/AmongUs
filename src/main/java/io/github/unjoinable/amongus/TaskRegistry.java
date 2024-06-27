@@ -14,6 +14,7 @@ public class TaskRegistry {
 
     private TaskRegistry() {
         this.tasks = new ConcurrentHashMap<>();
+        register();
     }
 
     public void add(String taskName, GameTask task) {

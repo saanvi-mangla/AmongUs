@@ -44,7 +44,6 @@ public class AmongUs {
         CommandManager commandManager = MinecraftServer.getCommandManager();
         commandManager.register(new TestCommand()); // FOR TESTING PURPOSES ONLY
         commandManager.register(new ResourceTest());
-
         server.start("0.0.0.0", Constants.PORT);
     }
 
