@@ -4,6 +4,7 @@ import io.github.unjoinable.amongus.commands.ResourceTest;
 import io.github.unjoinable.amongus.commands.TestCommand;
 import io.github.unjoinable.amongus.data.Constants;
 import io.github.unjoinable.amongus.game.GameInstanceStorage;
+import io.github.unjoinable.amongus.listener.PreInventoryClickListener;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.CommandManager;
@@ -36,7 +37,7 @@ public class AmongUs {
         logger.info("Starting server on port {}. Powered by Minestom, Engineered by unjoinable", Constants.PORT);
 
         GlobalEventHandler eventHandler = MinecraftServer.getGlobalEventHandler();
-
+        eventHandler.addListener(new PreInventoryClickListener());
         eventHandler.addListener(AsyncPlayerConfigurationEvent.class, event -> {
             event.setSpawningInstance(hubInstance);
         });
@@ -44,6 +45,7 @@ public class AmongUs {
         CommandManager commandManager = MinecraftServer.getCommandManager();
         commandManager.register(new TestCommand()); // FOR TESTING PURPOSES ONLY
         commandManager.register(new ResourceTest());
+        TaskRegistry.register();
         server.start("0.0.0.0", Constants.PORT);
     }
 

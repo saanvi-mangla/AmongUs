@@ -20,7 +20,7 @@ public class GUIUnlockManifolds extends GUI {
     //9,10  -11,12,13,14,15-  16,17,
 
     public GUIUnlockManifolds() {
-        super(InventoryType.CHEST_2_ROW, MM."Unlock Manifolds");
+        super(InventoryType.CHEST_2_ROW, MM."tasks.unlock_manifold");
     }
 
     @Override

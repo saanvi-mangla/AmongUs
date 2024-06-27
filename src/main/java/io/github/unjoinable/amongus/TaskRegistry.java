@@ -1,6 +1,7 @@
 package io.github.unjoinable.amongus;
 
 import io.github.unjoinable.amongus.task.GameTask;
+import org.jetbrains.annotations.NotNull;
 import org.reflections.Reflections;
 
 import java.lang.reflect.InvocationTargetException;
@@ -14,14 +15,17 @@ public class TaskRegistry {
 
     private TaskRegistry() {
         this.tasks = new ConcurrentHashMap<>();
-        register();
     }
 
-    public void add(String taskName, GameTask task) {
+    public void add(@NotNull String taskName, @NotNull GameTask task) {
         this.tasks.put(taskName, task);
     }
 
-    public GameTask get(String taskName) {
+    public boolean contains(@NotNull String taskName) {
+        return this.tasks.containsKey(taskName);
+    }
+
+    public GameTask get(@NotNull String taskName) {
         return this.tasks.get(taskName);
     }
 
