@@ -29,6 +29,7 @@ public class TaskUnlockManifolds implements GameTask {
 
     @Override
     public void run(InventoryPreClickEvent event) {
+        //assuming this event is caused by a TaskUnlockManifolds GUI
 
     }
 }
