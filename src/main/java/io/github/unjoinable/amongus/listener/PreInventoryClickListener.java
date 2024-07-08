@@ -9,6 +9,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class PreInventoryClickListener implements EventListener<InventoryPreClickEvent> {
     @Override
     public @NotNull Class<InventoryPreClickEvent> eventType() {

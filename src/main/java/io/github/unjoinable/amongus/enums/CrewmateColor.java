@@ -11,7 +11,10 @@ REMOVED DUE TO NOT FINDING THEM ON WIKI PAGE
     SILVER(TextColor.color(0xC0C0C0)),
     GOLD(TextColor.color(0xFFD700)),
  */
-@SuppressWarnings("all") // disable spell check
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public enum CrewmateColor {
     RED(TextColor.color(0xC61111)),
     ORANGE(TextColor.color(0xF07D0D)),
@@ -44,6 +47,8 @@ public enum CrewmateColor {
 
     /**
      * @return All types of Crewmates as Collection
+     * @since 1.0.0
+     * @author unjoinable
      */
     public static Collection<CrewmateColor> getValues() {
         return VALUES;
@@ -51,6 +56,8 @@ public enum CrewmateColor {
 
     /**
      * @return Color of crewmate
+     * @since 1.0.0
+     * @author unjoinable
      */
     public TextColor getColor() {
         return color;

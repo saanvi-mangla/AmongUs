@@ -7,6 +7,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
+/**
+ * @param player The player which is crewmate.
+ * @param color Color of player.
+ * @param tasks Tasks of player.
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public record Crewmate (@NotNull Player player, @NotNull CrewmateColor color, @NotNull HashMap<GameTask, Boolean> tasks) {
 
     public Crewmate {

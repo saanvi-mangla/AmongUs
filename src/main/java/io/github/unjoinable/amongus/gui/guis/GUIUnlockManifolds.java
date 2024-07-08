@@ -13,6 +13,10 @@ import java.util.List;
 
 import static io.github.unjoinable.amongus.util.MiniMessageTemplate.MM;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class GUIUnlockManifolds extends GUI {
     //0,1   - 2,3,4,5,6,-      7,8
     //9,10  -11,12,13,14,15-  16,17,

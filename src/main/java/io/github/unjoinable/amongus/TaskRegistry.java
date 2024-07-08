@@ -9,6 +9,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class TaskRegistry {
     private static final TaskRegistry instance = new TaskRegistry();
     private final Map<String, Class<? extends GameTask>> tasks;

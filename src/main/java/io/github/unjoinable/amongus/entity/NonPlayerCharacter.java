@@ -6,12 +6,15 @@ import net.minestom.server.entity.Entity;
 import net.minestom.server.entity.EntityType;
 import net.minestom.server.entity.PlayerSkin;
 import org.jetbrains.annotations.NotNull;
-
 /*
-TODO Finish the class...
+TODO FINISH THIS CLASS
  */
 import java.util.UUID;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class NonPlayerCharacter extends Entity {
     private final Component name;
     private final PlayerSkin skin;
@@ -20,6 +23,8 @@ public class NonPlayerCharacter extends Entity {
     /**
      * @param name The name of npc we want to show
      * @param skin The skin of npc
+     * @since 1.0.0
+     * @author unjoinable
      */
     public NonPlayerCharacter(@NotNull Component name, @NotNull PlayerSkin skin) {
         super(EntityType.PLAYER, UUID.randomUUID());

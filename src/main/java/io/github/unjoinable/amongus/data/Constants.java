@@ -8,6 +8,10 @@ import net.minestom.server.world.DimensionType;
 
 import java.nio.file.Path;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public final class Constants {
     public static final String BRAND = "AmongUs";
     public static final Pos SKELD_SPAWN_POS = new Pos(86,6,76);

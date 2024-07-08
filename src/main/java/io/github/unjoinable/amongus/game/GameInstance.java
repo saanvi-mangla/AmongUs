@@ -16,6 +16,10 @@ import java.util.*;
 import static io.github.unjoinable.amongus.util.MiniMessageTemplate.MM;
 import static io.github.unjoinable.amongus.util.MiniMessageTemplate.fromComponent;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class GameInstance {
     private final HashMap<Player, CrewmateColor> instancePlayers = new HashMap<>();
     private final List<Crewmate> instanceCrewmates = new ArrayList<>();
@@ -24,6 +28,8 @@ public class GameInstance {
 
     /**
      * @param uuid UUID of the game instance
+     * @since 1.0.0
+     * @author unjoinable
      */
     public GameInstance(UUID uuid) {
         this.instanceUUID = uuid;
@@ -44,6 +50,8 @@ public class GameInstance {
     /**
      * @param player The player we are adding to game instance
      * @param crewmateColor The kind of crewmateColor we are adding to game instance
+     * @since 1.0.0
+     * @author unjoinable
      */
     public void addPlayer(Player player, CrewmateColor crewmateColor) {
         if (player != null && crewmateColor != null) {
@@ -57,6 +65,8 @@ public class GameInstance {
     /**
      * @param crewmateColor The type of crewmateColor to check
      * @return If the provided crewmateColor is already in the game instance
+     * @since 1.0.0
+     * @author unjoinable
      */
     public boolean contains(@NotNull CrewmateColor crewmateColor) {
         return instancePlayers.containsValue(crewmateColor);
@@ -64,6 +74,8 @@ public class GameInstance {
 
     /**
      * @return UUID on which instance is operating
+     * @since 1.0.0
+     * @author unjoinable
      */
     public UUID getInstanceUUID() {
         return instanceUUID;

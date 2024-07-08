@@ -10,6 +10,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
+/**
+ * @since 1.0.0
+ * @author unjoinable
+ */
 public class TaskUnlockManifolds extends GameTask {
     @Override
     public @NotNull String name() {
