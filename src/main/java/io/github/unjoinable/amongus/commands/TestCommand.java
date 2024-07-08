@@ -2,7 +2,7 @@ package io.github.unjoinable.amongus.commands;
 
 import io.github.unjoinable.amongus.AmongUs;
 import io.github.unjoinable.amongus.game.GameInstance;
-import io.github.unjoinable.amongus.enums.Crewmate;
+import io.github.unjoinable.amongus.enums.CrewmateColor;
 import io.github.unjoinable.amongus.gui.guis.GUIUnlockManifolds;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.command.builder.Command;
@@ -16,7 +16,7 @@ public class TestCommand extends Command {
         addSyntax((sender, _) -> {
             Player player = ((Player) sender);
             GameInstance instance = AmongUs.getInstanceStorage().createInstance();
-            instance.addPlayer(player, Crewmate.BLACK);
+            instance.addPlayer(player, CrewmateColor.BLACK);
             instance.start();
             MinecraftServer.getSchedulerManager().scheduleTask(() -> {
                 new GUIUnlockManifolds().open(player);

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class TaskUnlockManifolds implements GameTask {
+public class TaskUnlockManifolds extends GameTask {
     @Override
     public @NotNull String name() {
         return "Unlock Manifolds";

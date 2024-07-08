@@ -11,13 +11,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class TaskRegistry {
     private static final TaskRegistry instance = new TaskRegistry();
-    private final Map<String, GameTask> tasks;
+    private final Map<String, Class<? extends GameTask>> tasks;
 
     private TaskRegistry() {
         this.tasks = new ConcurrentHashMap<>();
     }
 
-    public void add(@NotNull String taskName, @NotNull GameTask task) {
+    public void add(@NotNull String taskName, @NotNull Class<? extends GameTask> task) {
         this.tasks.put(taskName, task);
     }
 
@@ -25,7 +25,7 @@ public class TaskRegistry {
         return this.tasks.containsKey(taskName);
     }
 
-    public GameTask get(@NotNull String taskName) {
+    public Class<? extends GameTask> get(@NotNull String taskName) {
         return this.tasks.get(taskName);
     }
 
@@ -39,14 +39,12 @@ public class TaskRegistry {
     public static void register() {
         Reflections reflections = new Reflections("io.github.unjoinable.amongus.task.tasks");
         Set<Class<? extends GameTask>> taskClasses = reflections.getSubTypesOf(GameTask.class);
-        taskClasses.stream().map(subClass -> {
+        taskClasses.stream().map(subClass -> (Class <? extends GameTask>) subClass).filter(java.util.Objects::nonNull).forEach(subClass -> {
             try {
-                return (GameTask) subClass.getDeclaredConstructor().newInstance();
-            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-                return null;
+                TaskRegistry.instance.add(subClass.getDeclaredConstructor().newInstance().key(), subClass);
+            } catch (InstantiationException | NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+                throw new RuntimeException(e);
             }
-        }).filter(java.util.Objects::nonNull).forEach(subClass -> {
-            TaskRegistry.instance.add(subClass.key(), subClass);
         });
     }
 

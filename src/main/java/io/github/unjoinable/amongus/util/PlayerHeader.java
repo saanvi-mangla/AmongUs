@@ -1,6 +1,6 @@
 package io.github.unjoinable.amongus.util;
 
-import io.github.unjoinable.amongus.enums.Crewmate;
+import io.github.unjoinable.amongus.enums.CrewmateColor;
 import net.kyori.adventure.text.Component;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.Player;
@@ -15,10 +15,10 @@ public class PlayerHeader {
 
     /**
      * @param player The player who we are adding to the team
-     * @param crewmate The type of crewmate player is / will be
+     * @param crewmateColor The type of crewmateColor player is / will be
      */
-    public static void setSussyHeader(Player player, Crewmate crewmate) {
-        PlayerHeader.setPlayerHeader(player, MM."<bold>\{crewmate.name().replaceAll("_", " ")} ".color(crewmate.getColor()));
+    public static void setSussyHeader(Player player, CrewmateColor crewmateColor) {
+        PlayerHeader.setPlayerHeader(player, MM."<bold>\{crewmateColor.name().replaceAll("_", " ")} ".color(crewmateColor.getColor()));
     }
 
     /**

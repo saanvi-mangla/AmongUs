@@ -12,7 +12,7 @@ REMOVED DUE TO NOT FINDING THEM ON WIKI PAGE
     GOLD(TextColor.color(0xFFD700)),
  */
 @SuppressWarnings("all") // disable spell check
-public enum Crewmate {
+public enum CrewmateColor {
     RED(TextColor.color(0xC61111)),
     ORANGE(TextColor.color(0xF07D0D)),
     YELLOW(TextColor.color(0xF6F657)),
@@ -36,16 +36,16 @@ public enum Crewmate {
 
     private final TextColor color;
 
-    Crewmate(TextColor color) {
+    CrewmateColor(TextColor color) {
         this.color = color;
     }
 
-    private static final Collection<Crewmate> VALUES = Arrays.asList(values());
+    private static final Collection<CrewmateColor> VALUES = Arrays.asList(values());
 
     /**
      * @return All types of Crewmates as Collection
      */
-    public static Collection<Crewmate> getValues() {
+    public static Collection<CrewmateColor> getValues() {
         return VALUES;
     }
 

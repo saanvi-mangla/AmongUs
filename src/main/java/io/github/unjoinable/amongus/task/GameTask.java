@@ -5,32 +5,46 @@ import io.github.unjoinable.amongus.enums.TaskLength;
 import net.minestom.server.event.inventory.InventoryPreClickEvent;
 import org.jetbrains.annotations.NotNull;
 
-public interface GameTask {
+public abstract class GameTask {
+    private boolean isDone = false;
 
     /**
      * @return Absolute name of the task, Primarily planned to be used to show current tasks
      */
-    @NotNull String name();
+    public abstract @NotNull String name();
 
     /**
      * @return The type of task
      */
-    @NotNull TaskLength taskLength();
+    public abstract @NotNull TaskLength taskLength();
 
     /**
      * @return Location of where this task can be found in game
      */
-    @NotNull GameMap location();
+    public abstract @NotNull GameMap location();
 
     /**
      * @return An overall key which would be used to handle entire logic such as texture for gui, maybe to detect the task from gui
      */
-    @NotNull String key();
+    public abstract @NotNull String key();
 
     /**
      * @param event The event on which we are going to work from
      * The execution to be done when an event is fired for a respective task type
      */
-    void run(InventoryPreClickEvent event);
+    public abstract void run(InventoryPreClickEvent event);
 
+    /**
+     * @return Whether the task is done or not
+     */
+    public boolean isDone() {
+        return isDone;
+    }
+
+    /**
+     * Mark the task as finished!
+     */
+    public void setDone() {
+        this.isDone = true;
+    }
 }

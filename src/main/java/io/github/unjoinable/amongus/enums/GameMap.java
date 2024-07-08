@@ -1,6 +1,7 @@
 package io.github.unjoinable.amongus.enums;
 
 public sealed interface GameMap {
+
     enum THE_SKELD implements GameMap {
         CAFETERIA,
         WEAPONS,
@@ -15,15 +16,18 @@ public sealed interface GameMap {
         SECURITY,
         REACTOR,
         UPPER_ENGINE,
-        MEDBAY;
+        MEDBAY,
+        ;
     }
 
     enum POLUS implements GameMap {
-        TO_BE_ADDED;
+        TO_BE_ADDED,
+        ;
     }
 
     enum MIRA_HQ implements GameMap {
-        TO_BE_ADDED;
+        TO_BE_ADDED,
+        ;
     }
 }
 
