@@ -34,7 +34,7 @@ public class TaskRegistry {
     }
 
     /**
-     * @return The instance of registry
+     * @return The instance of this registry
      */
     public static TaskRegistry instance() {
         return instance;
